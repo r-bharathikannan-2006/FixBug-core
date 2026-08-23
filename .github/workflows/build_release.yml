@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  build-windows-x64:
+  build-windows:
     runs-on: windows-latest
     
     steps:
@@ -40,7 +40,8 @@ jobs:
 
       - name: Compile Inno Setup Installer
         shell: cmd
-        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DIs_x64 installer.iss'
+        # Removed the /DIs_x64 argument since the script is now purely 64-bit
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss'
 
       - name: Generate SHA-256 Checksum
         run: |
@@ -52,7 +53,7 @@ jobs:
       - name: Upload Installer and Checksum as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: FixBug-Installer-x64
+          name: FixBug-Installer
           path: |
             Output/*.exe
             Output/checksums.txt
