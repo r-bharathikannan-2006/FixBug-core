@@ -33,11 +33,21 @@ jobs:
           python-version: '3.11'
           architecture: ${{ matrix.architecture }}
 
-      - name: Install dependencies
+      - name: Install 32-bit OpenSSL (Fix for cryptography)
+        run: choco install openssl -y --x86
+
+      - name: Install Requirements
+        env:
+          OPENSSL_DIR: 'C:\Program Files (x86)\OpenSSL-Win32'
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller
-          pip install -r requirements_${{ matrix.architecture }}.txt
+          
+          # 1. Install pyinstaller and core tree-sitter first
+          pip install pyinstaller tree-sitter==0.26.0
+          
+          # 2. Install everything else without build isolation 
+          # This ensures the language grammars can find tree_sitter/parser.h
+          pip install --no-build-isolation -r requirements_${{ matrix.architecture }}.txt
 
       - name: Build executable with PyInstaller
         run: |
