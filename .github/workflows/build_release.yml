@@ -42,17 +42,28 @@ jobs:
         shell: cmd
         run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DIs_x64 installer.iss'
 
-      - name: Upload Installer as Artifact
+      - name: Generate SHA-256 Checksum
+        run: |
+          $Installer = Get-ChildItem -Path Output\FixBug_core_Installer*.exe
+          $Hash = Get-FileHash -Path $Installer.FullName -Algorithm SHA256
+          $ChecksumString = $Hash.Hash + "  " + $Installer.Name
+          $ChecksumString | Out-File -FilePath Output\checksums.txt -Encoding utf8
+
+      - name: Upload Installer and Checksum as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: FixBug-Installer-x64
-          path: Output/*.exe
+          path: |
+            Output/*.exe
+            Output/checksums.txt
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag_name || github.ref_name }}
-          files: Output/*.exe 
+          files: |
+            Output/*.exe
+            Output/checksums.txt
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
