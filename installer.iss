@@ -1,18 +1,11 @@
 [Setup]
-; Check which compiler flag was passed by the GitHub Action's /D argument
-#ifdef Is_x64
-  #define ArchSuffix "_x64"
-#else
-  #define ArchSuffix "_x86"
-#endif
-
-AppName='FixBug-core'
+AppName=FixBug-core
 AppVersion=1.0.0
 AppPublisher="Bharathikannan R"
 DefaultDirName={autopf}\fixbug-core
 DisableProgramGroupPage=yes
 OutputDir=Output
-OutputBaseFilename=FixBug_core_Installer{#ArchSuffix}
+OutputBaseFilename=FixBug_core_Installer
 Compression=lzma
 SolidCompression=yes
 ; Required to immediately refresh the terminal environment variables after installation
@@ -20,11 +13,9 @@ ChangesEnvironment=yes
 SetupIconFile=assets\fixbug.ico
 UninstallDisplayIcon={app}\fbcore.exe
 
-; Ensure 64-bit installer installs to native Program Files and only runs on 64-bit machines.
-#ifdef Is_x64
+; Ensure installer installs to native Program Files (64-bit) and only runs on 64-bit machines.
 ArchitecturesAllowed=x64
 ArchitecturesInstallIn64BitMode=x64
-#endif
 
 [Files]
 Source: "dist\fbcore\fbcore.exe"; DestDir: "{app}"; Flags: ignoreversion
