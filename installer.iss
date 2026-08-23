@@ -10,7 +10,7 @@ AppName='FixBug-core'
 AppVersion=1.0.0
 AppPublisher="Bharathikannan R"
 DefaultDirName={autopf}\fixbug-core
-DefaultGroupName=fixbug-core
+DisableProgramGroupPage=yes
 OutputDir=Output
 OutputBaseFilename=FixBug_core_Installer{#ArchSuffix}
 Compression=lzma
@@ -29,9 +29,6 @@ ArchitecturesInstallIn64BitMode=x64
 [Files]
 Source: "dist\fbcore\fbcore.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\fbcore\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-
-[Icons]
-Name: "{group}\fixbug-core"; Filename: "{app}\fbcore.exe"
 
 [Registry]
 Root: HKLM; Subkey: "System\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "Path"; ValueData: "{olddata};{app}"; Check: NeedsAddPath(ExpandConstant('{app}'))
