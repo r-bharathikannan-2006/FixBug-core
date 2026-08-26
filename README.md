@@ -6,11 +6,10 @@ FixBug-Core is a AI debugging, CLI application, which is specifically designed f
 
 ## Table of Content
    1. [About](#about)
-   2. [Features](#features)
-   3. [Download](#download)
-   4. [How it works](#how-it-works)
-   5. [How to use](#how-to-use)
-   6. [Building FixBug-core](#building-fixbug-core)
+   2. [Download](#download)
+   3. [How it works](#how-it-works)
+   4. [How to use](#how-to-use)
+   5. [Building FixBug-core](#building-fixbug-core)
 
 ## About
 FixBug-Core automatically scrapes the console screen buffer to read your last executed command and its exact output, isolating code defects and accelerating your debugging workflow.  When issues are found, FixBug-Core relies on AI to analyze the context and renders syntax-highlighted visual diff comparisons directly in your terminal. Fixbug acts as a context-aware CLI tool for terminal error capture, AST parsing, and AI-powered automated code remediation.
