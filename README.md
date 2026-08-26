@@ -7,7 +7,7 @@ FixBug is a AI debugging, CLI application, which is specifically designed for wi
 ## Table of Content
 
 ## About
-FixBug automatically scrapes the console screen buffer to read your last executed command and its exact output, isolating code defects and accelerating your debugging workflow.  When issues are found, FixBug relies on AI to analyze the context and renders syntax-highlighted visual diff comparisons directly in your terminal. Context-aware CLI tool for terminal error capture, AST parsing, and AI-powered automated code remediation.
+FixBug automatically scrapes the console screen buffer to read your last executed command and its exact output, isolating code defects and accelerating your debugging workflow.  When issues are found, FixBug relies on AI to analyze the context and renders syntax-highlighted visual diff comparisons directly in your terminal. Fixbug acts as a context-aware CLI tool for terminal error capture, AST parsing, and AI-powered automated code remediation.
 ### Features 
 - Automated Context Scraping: Captures the specific command typed along with its exact terminal output directly from the Windows console buffer.
 - AI-Powered Remediation: Integrates with your local AI orchestration setup to diagnose errors and generate code fixes.
