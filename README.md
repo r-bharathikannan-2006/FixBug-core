@@ -28,7 +28,16 @@ FixBug automatically scrapes the console screen buffer to read your last execute
 ## Getting Started
 ### Building fixbug
 To compile the Python source code into a standalone executable and generate the installer:
-1. Refer to command_to_build.txt for the specific PyInstaller build commands.
-2. Use Inno Setup with the provided installer.iss file to package the compiled executable into a distributable Windows installer.
+1. Refer to command_to_build.txt for the specific PyInstaller build commands. <details>
+<summary>Click to view command_to_build.txt (Command to run) file contents</summary>
+
+```txt
+pyinstaller --name FixBug --icon=fixbug.ico --collect-data cfonts --hidden-import tree_sitter_python --hidden-import tree_sitter_javascript --hidden-import tree_sitter_typescript --hidden-import tree_sitter_java --hidden-import tree_sitter_kotlin --hidden-import tree_sitter_c_sharp --hidden-import tree_sitter_c --hidden-import tree_sitter_cpp --hidden-import tree_sitter_go --hidden-import tree_sitter_rust --hidden-import tree_sitter_php --hidden-import tree_sitter_swift --hidden-import tree_sitter_ruby --hidden-import tree_sitter_bash --hidden-import tree_sitter_powershell --hidden-import tree_sitter_sql --hidden-import tree_sitter_dart main.py
+```
+
+</details>
+3. Use Inno Setup with the provided installer.iss file to package the compiled executable into a distributable Windows installer.
+
+
 
 
