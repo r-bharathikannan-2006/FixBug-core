@@ -1,7 +1,7 @@
 # FixBug - Core (Windows)
 FixBug is a AI debugging, CLI application, which is specifically designed for windows users.
 
-<img width="960" height="540" alt="Demo Video" src="https://github.com/user-attachments/assets/bcef7981-6700-4561-9ce8-8960c6255ffb" />
+<img width="720" height="405" alt="Demo Video" src="https://github.com/user-attachments/assets/bcef7981-6700-4561-9ce8-8960c6255ffb" />
 
 
 ## Table of Content
