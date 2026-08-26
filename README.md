@@ -1,4 +1,4 @@
-# FixBug - Core (Windows)
+# FixBug - Core (for Windows 10, 11)
 FixBug is a AI debugging, CLI application, which is specifically designed for windows users.
 
 <img width="720" height="405" alt="Demo Video" src="https://github.com/user-attachments/assets/bcef7981-6700-4561-9ce8-8960c6255ffb" />
@@ -28,12 +28,20 @@ FixBug automatically scrapes the console screen buffer to read your last execute
 ## Getting Started
 ### Building fixbug
 To compile the Python source code into a standalone executable and generate the installer:
-1. Refer to command_to_build.txt for the specific PyInstaller build commands.
-  ```txt
-  pyinstaller --name FixBug --icon=fixbug.ico --collect-data cfonts --hidden-import tree_sitter_python --hidden-import tree_sitter_javascript --hidden-import tree_sitter_typescript --hidden-import tree_sitter_java --hidden-import tree_sitter_kotlin --hidden-import tree_sitter_c_sharp --hidden-import tree_sitter_c --hidden-import tree_sitter_cpp --hidden-import tree_sitter_go --hidden-import tree_sitter_rust --hidden-import tree_sitter_php --hidden-import tree_sitter_swift --hidden-import tree_sitter_ruby --hidden-import tree_sitter_bash --hidden-import tree_sitter_powershell --hidden-import tree_sitter_sql --hidden-import tree_sitter_dart main.py
-```
-2. Use Inno Setup with the provided installer.iss file to package the compiled executable into a distributable Windows installer.
-
-
-
-
+1. **Install required packages using pip:**
+   Run these commands in Terminal to install required packages:
+   1. ``` cd FixBug-core ```
+   2. ``` pip install -r requirements.txt ```
+2. **Build executable using pyinstaller:**
+   Run this command in the terminal :
+   ```txt
+   pyinstaller --name FixBug --icon=fixbug.ico --collect-data cfonts --hidden-import tree_sitter_python --hidden-import tree_sitter_javascript --hidden-import
+   tree_sitter_typescript --hidden-import tree_sitter_java --hidden-import tree_sitter_kotlin --hidden-import tree_sitter_c_sharp --hidden-import tree_sitter_c --hidden
+   import tree_sitter_cpp --hidden-import tree_sitter_go --hidden-import tree_sitter_rust --hidden-import tree_sitter_php --hidden-import tree_sitter_swift --hidden-import
+   tree_sitter_ruby --hidden-import tree_sitter_bash --hidden-import tree_sitter_powershell --hidden-import tree_sitter_sql --hidden-import tree_sitter_dart main.py
+   ```
+3. **Build installer using Inno Setup**:
+   Use Inno Setup with the provided installer.iss file to package the compiled executable into a distributable Windows installer.
+   1. Download and install Inno setup on your machine.
+   2. Open installer.iss file in your machine, press compile inside run tab and wait for it to complete.
+   4. Click on the FixBug_core_Installer file inside Output directory and install it.
