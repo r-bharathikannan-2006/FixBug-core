@@ -14,8 +14,9 @@ FixBug automatically scrapes the console screen buffer to read your last execute
 - AI Action Executor: Performs file editing, creation, appending, deletions, and reading a file's content.
 
 ## Download 
-[Download Latest Release for windows x64](https://github.com/r-bharathikannan-2006/FixBug-core/releases/latest/download/FixBug_core_Installer.exe
-)
+   [Download Latest Release for windows x64](https://github.com/r-bharathikannan-2006/FixBug-core/releases/latest/download/FixBug_core_Installer.exe)
+   
+   Or else, you can build the FixBug-core using instruction provided [here](#building-fixbug).
 
 ## How it works
 1. **Context Capture**: Upon triggering, FixBug accesses the console buffer to scrape the exact command you just executed (previous Command), alongside its corresponding output or error stack trace.
