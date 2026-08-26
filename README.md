@@ -33,8 +33,7 @@ FixBug-Core automatically scrapes the console screen buffer to read your last ex
 6. **Visual Remediation**: The final changes are rendered back to you in the terminal as a syntax-highlighted visual difference layout, ready for your review.
 
 ## How to use
-   > After an error, just call fbcore in your terminal.
-FixBug-Core operates retroactively. You do not need to wrap your commands or pass your scripts as arguments. Simply run your code normally, and if it crashes, run fixbug-core immediately afterward.
+   > After an error, just call fbcore in your terminal.  FixBug-Core operates retroactively.  You do not need to wrap your commands or pass your scripts as arguments.  Simply run your code normally, and if it crashes, run fbcore immediately afterward.
 1. #### Configuration
    Before your first run, you need to configure your Gemini API key and preferences.
    Open the interactive settings menu by running any of the following commands:
