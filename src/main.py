@@ -155,7 +155,7 @@ def main():
     # Validate prerequisite environment variables
     if not config.get("api_key"):
         display.display_progress("[!] GEMINI API KEY is missing.")
-        display.display_progress("Please run 'fixbug --settings' to configure the application.")
+        display.display_progress("Please run 'fbcore --settings' to configure the application.")
         sys.exit(1)
 
     display.display_progress("Initializing FixBug Agent...")
@@ -166,6 +166,7 @@ def main():
     
     if len(result) == 3:
         display.display_progress("No previous command or output found in terminal. Exiting.")
+        display.display_progress("Try running command that led to the error first, and then run fbcore.")
         sys.exit(1)
         
     command_dict, output = result
