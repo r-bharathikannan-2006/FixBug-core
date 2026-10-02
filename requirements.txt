@@ -28,6 +28,7 @@ markdown-it-py==4.2.0
 matplotlib-inline==0.2.2
 mdurl==0.1.2
 multidict==6.7.1
+ollama==0.6.3
 openai==0.27.10
 parso==0.8.7
 prompt_toolkit==3.0.53
